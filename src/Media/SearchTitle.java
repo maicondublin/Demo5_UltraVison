@@ -214,6 +214,8 @@ public void SearchMusic() {
 				//print out the data from the title selected by a user
 				System.out.println(TitleD[0]);
 				System.out.println(TitleD[1]);
+				System.out.println(TitleD[1]);
+				
 			}
 			catch(Exception e) {
 				System.out.print(e);
