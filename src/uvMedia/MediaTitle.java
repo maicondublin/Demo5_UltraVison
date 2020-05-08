@@ -122,7 +122,66 @@ public class MediaTitle {
 			
 		}catch (Exception e) { System.out.print(e);}
 		
+		//addBoxSet class is taking a inf. for the new title 
+				// upload into a  customer DB
+		public void addLconcert() {
+			
+			Scanner input = new Scanner (System.ie);
+			
+			System.out.println("Live Concert / Music Title");
+			title = input.next();
+			
+			System.out.println("Year of release YYYY");
+			year = input.next();
+			
+			System.out.println("Band");
+			band = input.next();
 		
+			System.out.println("Set (DVD - CD - BluR)");
+			band = input.next();
+			
+			System.out.println(" Add new Live Concert / Music title?");
+			System.out.println(" Digit 1 for YES");
+			System.out.println(" Digit 2 for NO");
+			
+			int Option = input.nextInt();
+			
+			try {
+				
+				//Inside of the Try/Catch block of code will be 
+				//the set of statments where an exception can occur
+				// set of permissions where it will get into the SQL
+				
+				Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+				String dbServer = "Jdbc:mysql://localhost:3306/ultrauv";
+				String user = "root";
+				String password = "root";
+				
+				// Get a connection to DB
+				Connection con = DriverManager.getConnection(dbServer, user, password) ;
+				
+				// Get a statement from the connection
+				Statement stmt = con.createStatement();
+				
+				String InsertClient = "INSERT INTO music"
+						+ "(title, year_of_release, band, set)" //from DB
+						+ "VALUES ('"+ "" + title +"" +"','"+ year +"','"+ band +"','"+ set +"')"; //from a class
+				//Strings that hold a query that insert data into DB
+				
+				if(Option ==(1)) {
+					stmt.executeUpdate(insertClient);
+					Lconcert video = new Lconcert (title, year, band, set); // call the variable from a movie class
+					
+					System.out.println(video)
+					
+				}else {System.out.println("Invalid connect to the database, please");}
+				
+			}catch (Exception e) System.out.print(e);}
+	
+				}
+				
+				
+			
 				
 			}
 		}
