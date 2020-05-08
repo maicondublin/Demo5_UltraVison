@@ -1,7 +1,15 @@
-/**
- * 
- */
+
 package uvMedia;
+
+import java.sql.Connection;
+
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.Scanner;
+import uvHome.Principal;
+import uvCustomer.ML;
+
+
 
 /**
  * @author washington
@@ -179,12 +187,62 @@ public class MediaTitle {
 			}catch (Exception e) System.out.print(e);}
 	
 				}
+	//addBoxSet class is taking a inf. for the new title 
+	   // upload into a  customer DB	
+	
+	public void addBoxSet() {
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Boxset Title");
+		title = input.next();
+		
+		System.out.println("Boxset year of release YYYY");
+		year = input.next();
+		
+		System.out.println("ADD new Boxset title?");
+		System.out.println("Digit 1 for YES?");
+		System.out.println("Digit 2 for NO?");	
+		
+		int Option = input.nextInt();
+		
+		//Inside of the Try/Catch block of code will be 
+		//the set of statments where an exception can occur
+		// set of permissions where it will get into the SQL
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+			String dbServer = "jdbc:mysql://localhost:3306/ultrauv";
+			String user = "root";
+			String password = "root";
+			
+			//Get a connection to DB
+			Connection con = DriveManager.getConnection(dvServer, user, password);
+			
+			
+			//Get a statement from the connection
+			Statement stmt = con.createStatement();
+			
+			String InsertClient = "INSERT INTO boxset"
+					+ "(title, year_of_release) " // from DB
+					+ "VALUES ('"+ "" + title +"" +"','"+ year +"')"; //from a class
+			// String that hold a query that insert data into database
+			
+			
+			if (Option ==(1)) {
 				
+				//Execute the query
+				
+				stmt.executeUpdate(InsertClient);
+				Boxset video = new Boxset (title,year ); // call a variables from a movies class
+				
+				System.out.println(video);
 				
 			
 				
-			}
-		}
+			} else {System.out.println("Invalid, connect to the database, please");}
+			
+		} catch(Exception e) {System.out.print(e);}
 	}
 
 }
