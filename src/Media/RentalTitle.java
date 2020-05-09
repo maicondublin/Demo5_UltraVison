@@ -1,7 +1,7 @@
 /**
  * 
  */
-package uvMedia;
+package Media;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -235,7 +235,7 @@ public void RentalVideoLovers() {
 			//save into a array
 			for(int i = 0; i < TitleD.length; i++) {
 				if(data.next()) {
-					TitleD[i] = data.getString(title);
+					TitleD[i] = data.getString("title");
 					i++;
 				}
 			}
@@ -259,7 +259,7 @@ public void RentalVideoLovers() {
 		}
 	}
 	
-		public void RentalDataBaseMl() {
+		public void RentalDataBaseML() {
 			
 			System.out.println("Select a title to rental: ");
 			titleRental = input.next();
@@ -511,10 +511,10 @@ public void RentalVideoLovers() {
 
 				}catch(Exception e) {
 					System.out.print(e);
-					}		
+				}		
 				
-			}
-		}
+	}
+}
 	
 
 
