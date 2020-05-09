@@ -60,7 +60,7 @@ public class SearchCustomer {
 			
 			//Query used to update a DB with new info
 			
-			if(Option ==(1));
+			if(Option ==(1)); {
 			stmt.execute(SearchCustomer);
 			System.out.println("*********** Customer found successfully ************");
 			
