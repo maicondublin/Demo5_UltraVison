@@ -135,7 +135,7 @@ public class MediaTitle {
 				    			
 				    		// Execute the query
 				    		stmt.executeUpdate(InsertCustomer);
-				    		Movie video = new Movie (); // call the variables from a movie class
+				    		Movie video = new Movie (title,year, genre, director, set); // call the variables from a movie class
 				    		
 				    		System.out.println(video);
 				    				    		
