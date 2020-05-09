@@ -1,13 +1,13 @@
 
-package Media;
+package media;
 
 import java.sql.Connection;
 
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.Scanner;
-import uvHome.Principal;
-import uvCustomer.ML;
+import home.Principal;
+
 
 
 
@@ -31,7 +31,7 @@ public class MediaTitle {
 		
 		int menu = 0;
 		// menu for scanner
-		int menu 1 = 0;
+		int menu1 = 0;
 		
 		Scanner input = new Scanner(System.in);
 		
@@ -113,7 +113,7 @@ public class MediaTitle {
 			// Get a statement from the connection
 			Statement stmt = con.createStatement();
 			
-			String InsertClient = "INSERT INTO movie"
+			String InsertCustomer = "INSERT INTO movie"
 					+ "(title, year_of_release, genre, director, set)"// from DB
 					+ "VALUES ('"+ "" +title+"" +"',''+year +"','"+genre +"','"+ director +"', '"+ set +"')"; // from a class
 					//Strings that hold a query that insert data into DB
@@ -121,14 +121,16 @@ public class MediaTitle {
 		
 			if (Option ==(1)) {
 				//Execute the query
-				stmt.executeUpdate(InsertClient);
+				stmt.executeUpdate(InsertCustomer);
 				Movie video = new Movie (title, year, genre, director, set); // call the variable from the movie class
 				
 				System.out.println(video);
 				
 			}else {System.out.println("Invalid connect to the database, please");}
 			
-		}catch (Exception e) { System.out.print(e);}
+		}catch (Exception e) { 
+			System.out.print(e);
+			}
 		
 		//addBoxSet class is taking a inf. for the new title 
 				// upload into a  customer DB
@@ -146,7 +148,7 @@ public class MediaTitle {
 			band = input.next();
 		
 			System.out.println("Set (DVD - CD - BluR)");
-			band = input.next();
+			set = input.next();
 			
 			System.out.println(" Add new Live Concert / Music title?");
 			System.out.println(" Digit 1 for YES");
@@ -177,16 +179,19 @@ public class MediaTitle {
 				//Strings that hold a query that insert data into DB
 				
 				if(Option ==(1)) {
-					stmt.executeUpdate(insertClient);
+					stmt.executeUpdate(insertCustomer);
 					Lconcert video = new Lconcert (title, year, band, set); // call the variable from a movie class
 					
-					System.out.println(video)
+					System.out.println(video);
 					
 				}else {System.out.println("Invalid connect to the database, please");}
 				
-			}catch (Exception e) System.out.print(e);}
-	
+			}catch (Exception e) {
+				System.out.print(e);
 				}
+			}
+	
+				
 	//addBoxSet class is taking a inf. for the new title 
 	   // upload into a  customer DB	
 	
