@@ -7,7 +7,7 @@ package plan;
  * @author maiconalmeida
  *
  */
-public class Customer {
+public abstract class Customer {
 	
 	//variables
 	protected String name;
