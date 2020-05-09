@@ -56,7 +56,7 @@ public class UpdateCustomer {
 			String password = "root";
 			Connection con = DriverManager.getConnection(dbServer, user, password) ;
 			Statement stmt = con.createStatement() ;
-			String UpDateCustomer = "UPDATE Customer SET plan ='" + newPlan + "', name = '"+ newName +"', creditCard ="+ newCreditCard + " where membership= " + membership +"";
+			String UpdateCustomer = "UPDATE Customer SET plan ='" + newPlan + "', name = '"+ newName +"', creditCard ="+ newCredCard + " where memship= " + memship +"";
 			
 			
 			//Query used to update a DB with new info
@@ -85,4 +85,4 @@ public class UpdateCustomer {
 	
 	
 
-}
+
