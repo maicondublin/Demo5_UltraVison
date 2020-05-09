@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class SearchTitle {
 	
 	//to store the input from user
-}
+
 	
 	static String movie;
 	static String boxset;
@@ -48,18 +48,22 @@ public class SearchTitle {
 				
 				if (menu1 == (1)) {
 					SearchMovie();
+					}
 					
 					if (menu1 == (2)) {
 						SearchMusic();
-							
+					}
+					
 						if (menu1 == (3)) {
 							SearchBoxset();
-							
+						}
+			
 							if (menu1 == (4)) {
 								Main main = new Main();
 								main.Main();
 											
 								}
+							
 							else {
 								System.out.println("Select one option from the Menu");
 							}
@@ -91,7 +95,7 @@ public class SearchTitle {
 						String password = "root";
 						Connection con = DriverManager.getConnection(dbServer, user, password);
 						Statement stmt = con.createStatement();
-						String search "SELECT * FROM movie WHERE title = '" + title +"' and year_of_release = '" + year +"'";
+						String search "select * from movie where title = '" + title +"' and year_of_release = '" + year +"'";
 						ResultSet data = stmt.executeQuery(search);
 						
 						while(data.next()) {
@@ -114,12 +118,11 @@ public class SearchTitle {
 								System.out.println(TitleD[1]);
 							}
 						}
-					}catch(Exception e) {
-						System.out.println(e);}
+					}catch(Exception e) {System.out.println(e);}
 					}
 					
 				
-				public void Search Music() {
+				public void SearchMusic() {
 					//scanner to record the input from the user
 					
 					try(Scanner input = new Scanner(System.in)){
@@ -165,8 +168,7 @@ public class SearchTitle {
 					
 						
 				} catch(Exception e) {
-					System.out.print(e);
-				}
+					System.out.print(e);}
 					
 				}
 				
@@ -191,10 +193,10 @@ public class SearchTitle {
 						String password = "root";
 						Connection con = DriverManager.getConnection(dbServer, user, password);
 						Statement stmt = con.createStatement();
-						String search = "SELECT * FROM boxset where title  = '" + title +"' and year_of_release = '" + year +"'";
+						String search = "select * from boxset where title  = '" + title +"' and year_of_release = '" + year +"'";
 						ResultSet data = stmt.executeQuery(search);
 					
-						while(data.next());
+						while(data.next()) {
 						
 						// obtain data from the DB
 						// record on TitleD Array [Title Date]
@@ -209,8 +211,7 @@ public class SearchTitle {
 						System.out.println(TitleD[1]);
 						}
 			
-					}catch(Exception e) {
-						System.out.print(e);}
+					}catch(Exception e) {System.out.print(e);}
 					}
 				}
 
