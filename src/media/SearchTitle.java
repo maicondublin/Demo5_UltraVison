@@ -67,7 +67,8 @@ public class SearchTitle {
 							else {
 								System.out.println("Select one option from the Menu");
 							}
-						} while(menu==0);}}
+						} while(menu==0);}
+		}
 				
 				
 				public void SearchMovie() {
