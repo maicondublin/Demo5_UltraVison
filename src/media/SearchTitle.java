@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import Main.home;
+import home.Main;
 import java.util.Scanner;
 
 
@@ -93,10 +93,10 @@ public class SearchTitle {
 						String dbServer = "jdbc:mysql://localhost:3306/ultrauv";
 						String user = "root";
 						String password = "root";
-						Connection con = DriverManager.getConnection(dbServer, user, password);
-						Statement stmt = con.createStatement();
-						String search "select * from movie where title = '" + title +"' and year_of_release = '" + year +"'";
-						ResultSet data = stmt.executeQuery(search);
+						Connection con = DriverManager.getConnection(dbServer, user, password) ;
+						Statement stmt = con.createStatement() ;
+						String search = "Select * from movie where title = '" + title +"' and year_of_release = '" + year +"'";
+						ResultSet data = stmt.executeQuery(search) ;
 						
 						while(data.next()) {
 							
@@ -137,14 +137,14 @@ public class SearchTitle {
 					
 					try {
 					
-					Class.forName("com.mysql.cj.jdbc.Driver").newInstance() ;
-					String dbServer = "jdbc:mysql://localhost:3306/ultrauv";
-					String user = "root";
-					String password = "root";
-					Connection con = DriverManager.getConnection(dbServer, user, password);
-					Statement stmt = con.createStatement();
-					String search = "SELECT * FROM movie WHERE title = '" + title +"' and band = '" + band +"'";
-					ResultSet data = stmt.executeQuery(search);
+						Class.forName("com.mysql.cj.jdbc.Driver").newInstance() ;
+						String dbServer = "jdbc:mysql://localhost:3306/ultrauv";
+						String user = "root";
+						String password = "root";
+						Connection con = DriverManager.getConnection(dbServer, user, password) ;
+						Statement stmt = con.createStatement() ;
+						String search = "Select * from music where title = '" + title +"' and band = '" + band +"'";
+						ResultSet data = stmt.executeQuery(search) ;
 					
 					while(data.next()) {
 						
@@ -191,10 +191,10 @@ public class SearchTitle {
 						String dbServer = "jdbc:mysql://localhost:3306/ultrauv";
 						String user = "root";
 						String password = "root";
-						Connection con = DriverManager.getConnection(dbServer, user, password);
-						Statement stmt = con.createStatement();
-						String search = "select * from boxset where title  = '" + title +"' and year_of_release = '" + year +"'";
-						ResultSet data = stmt.executeQuery(search);
+						Connection con = DriverManager.getConnection(dbServer, user, password) ;
+						Statement stmt = con.createStatement() ;
+						String search = "Select * from boxset where title = '" + title +"' and year_of_release = '" + year +"'";
+						ResultSet data = stmt.executeQuery(search) ;
 					
 						while(data.next()) {
 						
@@ -203,8 +203,8 @@ public class SearchTitle {
 						
 						System.out.println("Title informarion as Follow");
 						System.out.println("Boxset Name * Year Of Release");
-						Title[0]=data.getString("title");
-						Title[1]=data.getString("year_of_release");
+						TitleD[0]=data.getString("title");
+						TitleD[1]=data.getString("year_of_release");
 						
 						//print out the data from the title selected by a user
 						System.out.println(TitleD[0]);
