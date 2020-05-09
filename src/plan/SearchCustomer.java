@@ -21,7 +21,7 @@ public class SearchCustomer {
 	
 	protected static String name;
 	protected static String memship;
-	static Strip plan;
+	static String plan;
 	
 	
 	public void SearchCustomer() {
@@ -66,6 +66,7 @@ public class SearchCustomer {
 			
 			
 		}
+		
 		if(Option ==(2)) {
 			//go back to the main page
 			Main searchCustomer = new Main();
