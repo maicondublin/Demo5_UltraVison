@@ -55,7 +55,7 @@ public class SearchTitle {
 					}
 					
 						if (menu1 == (3)) {
-							SearchBoxset();
+							SearchBoxSet();
 						}
 			
 							if (menu1 == (4)) {
