@@ -1,5 +1,5 @@
 
-package uvMedia;
+package Media;
 
 import java.sql.Connection;
 
