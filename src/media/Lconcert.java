@@ -14,7 +14,7 @@ public class Lconcert extends NTitle { // Lconcert is taking elements from a NTi
 		
 	}
 	@Override
-	public String to String() {
+	public String toString() {
 		//print out the live concerts input
 		return "New Live Concert / Music successfully recorded " + title + " Band" + band;
 		
